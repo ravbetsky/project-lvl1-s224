@@ -3,14 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "babel-node": "babel-node"
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ravbetsky/project-lvl1-s224.git"
   },
-  "author": "",
+  "author": "Artem Ravbetsky",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ravbetsky/project-lvl1-s224/issues"
