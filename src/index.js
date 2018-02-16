@@ -7,7 +7,7 @@ export default (rules, attempts, getQuestion, toString, getCorrect) => {
   console.log(`Hello, ${name}!`);
   if (attempts) {
     let counter = 0;
-    while (counter < attempts) {
+    while (counter < 3) {
       const question = getQuestion();
       console.log(`Question: ${toString(question)}`);
       const userAnswer = readlineSync.question('Your answer: ');

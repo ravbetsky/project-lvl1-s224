@@ -9,6 +9,5 @@ const toString = question => question;
 
 export default () => {
   const rules = 'Answer "yes" if number even otherwise answer "no".';
-  const attempts = 3;
-  gameConstructor(rules, attempts, getQuestion, toString, getCorrect);
+  gameConstructor(rules, getQuestion, toString, getCorrect);
 };

@@ -42,6 +42,5 @@ const getCorrect = exp => `${calc(exp)}`;
 
 export default () => {
   const rules = 'What is the result of the exp?';
-  const attempts = 3;
-  gameConstructor(rules, attempts, getQuestion, toString, getCorrect);
+  gameConstructor(rules, getQuestion, toString, getCorrect);
 };
