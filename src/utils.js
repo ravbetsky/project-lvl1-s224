@@ -31,3 +31,15 @@ export const isSortedNum = (n) => {
   }
   return true;
 };
+
+export const isPrime = (n) => {
+  if (n === 1) return false;
+  let counter = 2;
+  while (counter < Math.sqrt(n)) {
+    if (n % counter === 0) {
+      return false;
+    }
+    counter += 1;
+  }
+  return true;
+};
