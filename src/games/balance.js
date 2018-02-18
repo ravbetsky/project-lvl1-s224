@@ -30,7 +30,7 @@ const balance = (n) => {
 export default () => {
   const rules = 'Balance the given number.';
   const makeQuestion = () => {
-    const num = getRandomInt(100, 5000);
+    const num = getRandomInt(20, 5000);
     const numString = `${num}`;
     const correct = balance(num);
     return cons(numString, correct);
