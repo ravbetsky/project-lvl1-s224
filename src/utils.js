@@ -6,7 +6,7 @@ export const getExtrema = (n) => {
   const str = String(n);
   let max = 0;
   let min = Number(str[0]);
-  for (let i = 0; i < str.length - 1; i += 1) {
+  for (let i = 0; i < str.length; i += 1) {
     const digit = Number(str[i]);
     if (digit > max) {
       max = digit;
