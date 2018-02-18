@@ -1,8 +1,13 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomInt } from '../utils';
+import { getRandomInt, isPrime } from '../utils';
 import gameConstructor from '../index';
 
 export default () => {
   const rules = 'Is this number prime?';
-  gameConstructor(rules);
+  const makeQuestion = () => {
+    const num = getRandomInt(1, 99);
+    const correct = isPrime(num) ? 'yes' : 'no';
+    return cons(num, correct);
+  };
+  gameConstructor(rules, makeQuestion);
 };
