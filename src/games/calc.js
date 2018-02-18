@@ -1,5 +1,5 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import gameConstructor, { makeQuestion } from '../index';
+import gameConstructor from '../index';
 import getRandomInt from '../utils';
 
 const makeExp = (operation, a, b) => cons(cons(operation, a), b);
@@ -35,9 +35,12 @@ const calc = (exp) => {
 };
 
 export default () => {
-  const generator = () => makeExp(getRandomOperation(), getRandomInt(0, 20), getRandomInt(0, 20));
-  const correct = question => `${calc(question)}`;
-  const toString = question => `${getA(question)} ${getOperation(question)} ${getB(question)}`;
   const rules = 'What is the result of the exp?';
-  gameConstructor(rules, makeQuestion(generator, toString, correct));
+  const makeQuestion = () => {
+    const exp = makeExp(getRandomOperation(), getRandomInt(0, 20), getRandomInt(0, 20));
+    const expString = `${getA(exp)} ${getOperation(exp)} ${getB(exp)}`;
+    const correct = calc(exp);
+    return cons(expString, correct);
+  };
+  gameConstructor(rules, makeQuestion);
 };

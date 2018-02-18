@@ -1,5 +1,5 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import gameConstructor, { makeQuestion } from '../index';
+import gameConstructor from '../index';
 import getRandomInt from '../utils';
 
 const makePair = (a, b) => cons(a, b);
@@ -14,9 +14,12 @@ const gcd = (a, b) => {
 };
 
 export default () => {
-  const generator = () => makePair(getRandomInt(1, 20), getRandomInt(1, 20));
-  const correct = pair => `${gcd(getA(pair), getB(pair))}`;
-  const toString = pair => `${getA(pair)} ${getB(pair)}`;
   const rules = 'Find the greatest common divisor of given numbers.';
-  gameConstructor(rules, makeQuestion(generator, toString, correct));
+  const makeQuestion = () => {
+    const pair = makePair(getRandomInt(1, 20), getRandomInt(1, 20));
+    const pairString = `${getA(pair)} ${getB(pair)}`;
+    const correct = gcd(getA(pair), getB(pair));
+    return cons(pairString, correct);
+  };
+  gameConstructor(rules, makeQuestion);
 };
