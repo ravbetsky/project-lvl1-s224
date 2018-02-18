@@ -1,6 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
+import { getRandomInt } from '../utils';
 import gameConstructor from '../index';
-import getRandomInt from '../utils';
 
 const makePair = (a, b) => cons(a, b);
 

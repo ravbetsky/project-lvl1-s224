@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
+import { getRandomInt } from '../utils';
 import gameConstructor from '../index';
-import getRandomInt from '../utils';
 
 export default () => {
   const rules = 'Answer "yes" if number even otherwise answer "no".';
