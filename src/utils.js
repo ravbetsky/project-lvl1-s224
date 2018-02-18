@@ -23,8 +23,9 @@ export const getExMax = extrema => cdr(extrema);
 
 export const isSortedNum = (n) => {
   const str = String(n);
-  for (let i = 1; i < str.length - 1; i += 1) {
-    if (Number(str[i - 1]) > Number(str[i]) || Number(str[i]) > Number(str[i + 1])) {
+  if (str.length === 1) return true;
+  for (let i = 0; i < str.length - 1; i += 1) {
+    if (Number(str[i]) > Number(str[i + 1])) {
       return false;
     }
   }
